@@ -1,4 +1,4 @@
-# ThermoFloor (Heatit)
+# ThermoFloor App - Multireg / Heatit Z-wave thermostat for electrical floor heating
 This app adds support for devices made by [ThermoFloor](http://www.thermo-floor.no/).  
 ![ThermoFloor App](https://github.com/TedTolboom/no.ThermoFloor/blob/master/assets/images/small.jpg "Thermo-Floor app")   
 

@@ -1,8 +1,8 @@
 {
 	"id": "no.thermofloor",
 	"name": {
-		"en": "Thermo-Floor",
-		"nl": "Thermo-Floor"
+		"en": "Thermo-Floor AS",
+		"nl": "Thermo-Floor AS"
 	},
 	"version": "0.0.2",
 	"compatibility": ">=1.0.5",
@@ -25,21 +25,20 @@
 		"en": [
 			"central heating",
 			"floor heating",
+			"electrical floor heating",
 			"heat",
-			"heating valve",
-			"thermostat valve",
-			"thermostatic valve",
+			"thermostat",
+			"temperature control",
 			"underfloor heating"
 		],
 		"nl": [
 			"centrale verwarming",
-			"klimaat",
-			"thermostaat",
-			"temperatuur regeling",
 			"vloerverwarming",
 			"vloer verwarming",
+			"electrische vloerverwarming"
 			"warmte",
-			"warmte regeling"
+			"thermostaat",
+			"temperatuur regeling"
 		]
 	},
 	"description": {
@@ -188,8 +187,8 @@
 		{
 			"id": "TF_Thermostat",
 			"name": {
-				"en": "Remotec Scene Master",
-				"nl": "Remotec Scene Master"
+				"en": "Thermo-Floor Z-wave thermostat (Multireg / Heatit)",
+				"nl": "Thermo-Floor Z-wave thermostat (Multireg / Heatit)"
 			},
 			"icon": "/drivers/TF_Thermostat/assets/icon.svg",
 			"images": {
@@ -238,15 +237,15 @@
 				"learnmode": {
 					"image": "/drivers/TF_Thermostat/assets/learnmode.svg",
 					"instruction": {
-						"en": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear.",
-						"nl": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear."
+						"en": "To include the thermostat to Homey: \n1. press the Center (confirm) button for 10 seconds. The display will show OFF. \n2. Press Right(down) button 4 times till you see Con in the display.\n3. Now start add a device to Homey.\n4. Start inclusion mode by pressing Center(confirm) button for approximately 2 seconds. The inclusion / exclusion icon will appear in the display.\n5. Confirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear.",
+						"nl": "To include the thermostat to Homey: \n1. press the Center (confirm) button for 10 seconds. The display will show OFF. \n2. Press Right(down) button 4 times till you see Con in the display.\n3. Now start add a device to Homey.\n4. Start inclusion mode by pressing Center(confirm) button for approximately 2 seconds. The inclusion / exclusion icon will appear in the display.\n5. Confirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear."
 					}
 				},
 				"unlearnmode": {
 					"image": "/drivers/TF_Thermostat/assets/learnmode.svg",
 					"instruction": {
-						"en": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails, Err(error) will appear.",
-						"nl": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails, Err(error) will appear."
+						"en": "To remove the thermostat from Homey: \n1. press the Center (confirm) button for 10 seconds. The display will show OFF. \n2. Press Right(down) button 4 times till you see Con in the display.\n3. Now start to remove the device from Homey.\n4. Start exclusion mode by pressing Center(confirm) button for approximately 2 seconds. The inclusion / exclusion icon will appear in the display.\n5. Confirmation will show EcL in the display.\nIf exclusion fails, Err(error) will appear.",
+						"nl": "To remove the thermostat from Homey: \n1. press the Center (confirm) button for 10 seconds. The display will show OFF. \n2. Press Right(down) button 4 times till you see Con in the display.\n3. Now start to remove the device from Homey.\n4. Start exclusion mode by pressing Center(confirm) button for approximately 2 seconds. The inclusion / exclusion icon will appear in the display.\n5. Confirmation will show EcL in the display.\nIf exclusion fails, Err(error) will appear."
 					}
 				},
 				"associationGroups": [

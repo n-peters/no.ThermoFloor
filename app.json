@@ -1,10 +1,10 @@
 {
-	"id": "no.ThermoFloor",
+	"id": "no.thermofloor",
 	"name": {
 		"en": "Thermo-Floor",
 		"nl": "Thermo-Floor"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"compatibility": ">=1.0.5",
 	"author": {
 		"name": "Ted Tolboom",
@@ -21,6 +21,27 @@
 	"category": [
 		"climate"
 	],
+	"tags": {
+		"en": [
+			"central heating",
+			"floor heating",
+			"heat",
+			"heating valve",
+			"thermostat valve",
+			"thermostatic valve",
+			"underfloor heating"
+		],
+		"nl": [
+			"centrale verwarming",
+			"klimaat",
+			"thermostaat",
+			"temperatuur regeling",
+			"vloerverwarming",
+			"vloer verwarming",
+			"warmte",
+			"warmte regeling"
+		]
+	},
 	"description": {
 		"en": "Drivers for Thermo-Floor AS (Heatit) devices",
 		"nl": "Drivers voor Thermo-Floor AS (Heatit) apparaten"
@@ -28,6 +49,140 @@
 	"images": {
 		"large": "/assets/images/large.jpg",
 		"small": "/assets/images/small.jpg"
+	},
+	"flow": {
+		"triggers": [
+			{
+				"id": "thermofloor_mode_changed",
+				"title": {
+					"en": "Thermostatic mode has changed",
+					"nl": "Thermostaat modus is veranderd"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=TF_Thermostat"
+					}
+				],
+				"tokens": [
+					{
+						"name": "mode",
+						"title": {
+							"en": "ID",
+							"nl": "ID"
+						},
+						"example": {
+							"en": "Heat"
+						}
+					},
+					{
+						"name": "mode_name",
+						"title": {
+							"en": "Name",
+							"nl": "Naam"
+						},
+						"example": {
+							"en": "Comfortable",
+							"nl": "Comfortabel"
+						}
+					}
+				]
+			},
+			{
+				"id": "thermofloor_mode_changed_to",
+				"title": {
+					"en": "Thermostatic mode has changed to",
+					"nl": "Thermostaat modus is veranderd naar"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=TF_Thermostat"
+					},
+					{
+						"name": "mode",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "Off",
+								"label": {
+									"en": "Off (6°C)",
+									"nl": "Uit (6°C)"
+								}
+							},
+							{
+								"id": "Heat",
+								"label": {
+									"en": "Comfortable",
+									"nl": "Comfortabel"
+								}
+							},
+							{
+								"id": "Energy Save Heat",
+								"label": {
+									"en": "Economic",
+									"nl": "Economische"
+								}
+							},
+							{
+								"id": "MANUFACTURER SPECIFC",
+								"label": {
+									"en": "Manual",
+									"nl": "Handmatig"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"capabilities": {
+		"thermofloor_mode": {
+			"type": "enum",
+			"title": {
+				"en": "Thermostat mode",
+				"nl": "Thermostaat modus"
+			},
+			"desc": {
+				"en": "Mode of the thermostat",
+				"nl": "Modus van de thermostaat"
+			},
+			"values": [
+				{
+					"id": "Off",
+					"title": {
+						"en": "Off (6°C)",
+						"nl": "Uit (6°C)"
+					}
+				},
+				{
+					"id": "Heat",
+					"title": {
+						"en": "Comfortable",
+						"nl": "Comfortabel"
+					}
+				},
+				{
+					"id": "Energy Save Heat",
+					"title": {
+						"en": "Economic",
+						"nl": "Economische"
+					}
+				},
+				{
+					"id": "MANUFACTURER SPECIFC",
+					"title": {
+						"en": "Manual",
+						"nl": "Handmatig"
+					}
+				}
+			],
+			"getable": true,
+			"setable": true
+		}
 	},
 	"drivers": [
 		{
@@ -43,9 +198,36 @@
 			},
 			"class": "thermostat",
 			"capabilities": [
-				"measure_battery",
-				"alarm_battery"
+				"thermofloor_mode",
+				"measure_temperature",
+				"target_temperature"
 			],
+			"capabilitiesOptions": {
+				"target_temperature": {
+					"min": 4,
+					"max": 28,
+					"step": 0.5
+				}
+			},
+			"mobile": {
+				"components": [
+					{
+						"id": "icon"
+					},
+					{
+						"id": "sensor",
+						"capabilities": [
+							"measure_temperature"
+						]
+					},
+					{
+						"id": "thermostat",
+						"capabilities": [
+							"target_temperature"
+						]
+					}
+				]
+			},
 			"zwave": {
 				"manufacturerId": 411,
 				"productTypeId": 1,
@@ -56,31 +238,15 @@
 				"learnmode": {
 					"image": "/drivers/TF_Thermostat/assets/learnmode.svg",
 					"instruction": {
-						"en": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\
-						nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button
-						for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails,
-						Err(error) will appear.
-						",
-						"nl": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\
-						nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button
-						for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails,
-						Err(error) will appear.
-						"
+						"en": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear.",
+						"nl": "To include the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc in the display.\nIf inclusion fails, Err(error) will appear."
 					}
 				},
 				"unlearnmode": {
 					"image": "/drivers/TF_Thermostat/assets/learnmode.svg",
 					"instruction": {
-						"en": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\
-						nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button
-						for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails,
-						Err(error) will appear.
-						",
-						"nl": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\
-						nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button
-						for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails,
-						Err(error) will appear.
-						"
+						"en": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails, Err(error) will appear.",
+						"nl": "To exclude the thermostat to your home automation gateway, press the Center (confirm) button for 10 seconds.\nThe display will show OFF.Press Right(down) button 4 times till you see Con in the display.\nNow start adding device in your home automation software.\nStart inclusion mode by pressing Center(confirm) button for approximately 2 seconds.The inclusion / exclusion icon will appear in the display.\nConfirmation will show Inc / EcL in the display.\nIf inclusion fails, Err(error) will appear."
 					}
 				},
 				"associationGroups": [

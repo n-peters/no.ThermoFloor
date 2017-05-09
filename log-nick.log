@@ -1,0 +1,362 @@
+[debug] get thermofloor_mode
+[debug] get measure_temperature
+[debug] get target_temperature
+[debug] get thermofloor_mode
+[debug] get measure_temperature
+[debug] get target_temperature
+[debug] ------------------------------------------
+[debug] Node: 92e6edcc-68c5-49fd-86fb-ce3181bb8faf
+[debug] - Battery: false
+[debug] - CommandClass: COMMAND_CLASS_ZWAVEPLUS_INFO
+[debug] -- Version: 2
+[debug] -- Commands:
+[debug] --- ZWAVEPLUS_INFO_GET
+[debug] --- ZWAVEPLUS_INFO_REPORT
+[debug] - CommandClass: COMMAND_CLASS_THERMOSTAT_SETPOINT
+[debug] -- Version: 3
+[debug] -- Commands:
+[debug] --- THERMOSTAT_SETPOINT_GET
+[debug] --- THERMOSTAT_SETPOINT_REPORT
+[debug] --- THERMOSTAT_SETPOINT_SET
+[debug] --- THERMOSTAT_SETPOINT_SUPPORTED_GET
+[debug] --- THERMOSTAT_SETPOINT_SUPPORTED_REPORT
+[debug] --- THERMOSTAT_SETPOINT_CAPABILITIES_GET
+[debug] --- THERMOSTAT_SETPOINT_CAPABILITIES_REPORT
+[debug] - CommandClass: COMMAND_CLASS_SENSOR_MULTILEVEL
+[debug] -- Version: 6
+[debug] -- Commands:
+[debug] --- SENSOR_MULTILEVEL_GET
+[debug] --- SENSOR_MULTILEVEL_REPORT
+[debug] --- SENSOR_MULTILEVEL_SUPPORTED_GET_SENSOR
+[debug] --- SENSOR_MULTILEVEL_SUPPORTED_SENSOR_REPORT
+[debug] --- SENSOR_MULTILEVEL_SUPPORTED_GET_SCALE
+[debug] --- SENSOR_MULTILEVEL_SUPPORTED_SCALE_REPORT
+[debug] - CommandClass: COMMAND_CLASS_VERSION
+[debug] -- Version: 2
+[debug] -- Commands:
+[debug] --- VERSION_COMMAND_CLASS_GET
+[debug] --- VERSION_COMMAND_CLASS_REPORT
+[debug] --- VERSION_GET
+[debug] --- VERSION_REPORT
+[debug] - CommandClass: COMMAND_CLASS_THERMOSTAT_MODE
+[debug] -- Version: 3
+[debug] -- Commands:
+[debug] --- THERMOSTAT_MODE_GET
+[debug] --- THERMOSTAT_MODE_REPORT
+[debug] --- THERMOSTAT_MODE_SET
+[debug] --- THERMOSTAT_MODE_SUPPORTED_GET
+[debug] --- THERMOSTAT_MODE_SUPPORTED_REPORT
+[debug] - CommandClass: COMMAND_CLASS_ASSOCIATION_GRP_INFO
+[debug] -- Version: 1
+[debug] -- Commands:
+[debug] --- ASSOCIATION_GROUP_NAME_GET
+[debug] --- ASSOCIATION_GROUP_NAME_REPORT
+[debug] --- ASSOCIATION_GROUP_INFO_GET
+[debug] --- ASSOCIATION_GROUP_INFO_REPORT
+[debug] --- ASSOCIATION_GROUP_COMMAND_LIST_GET
+[debug] --- ASSOCIATION_GROUP_COMMAND_LIST_REPORT
+[debug] - CommandClass: COMMAND_CLASS_ASSOCIATION
+[debug] -- Version: 2
+[debug] -- Commands:
+[debug] --- ASSOCIATION_GET
+[debug] --- ASSOCIATION_GROUPINGS_GET
+[debug] --- ASSOCIATION_GROUPINGS_REPORT
+[debug] --- ASSOCIATION_REMOVE
+[debug] --- ASSOCIATION_REPORT
+[debug] --- ASSOCIATION_SET
+[debug] --- ASSOCIATION_SPECIFIC_GROUP_GET
+[debug] --- ASSOCIATION_SPECIFIC_GROUP_REPORT
+[debug] - CommandClass: COMMAND_CLASS_POWERLEVEL
+[debug] -- Version: 1
+[debug] -- Commands:
+[debug] --- POWERLEVEL_GET
+[debug] --- POWERLEVEL_REPORT
+[debug] --- POWERLEVEL_SET
+[debug] --- POWERLEVEL_TEST_NODE_GET
+[debug] --- POWERLEVEL_TEST_NODE_REPORT
+[debug] --- POWERLEVEL_TEST_NODE_SET
+[debug] - CommandClass: COMMAND_CLASS_MANUFACTURER_SPECIFIC
+[debug] -- Version: 2
+[debug] -- Commands:
+[debug] --- MANUFACTURER_SPECIFIC_GET
+[debug] --- MANUFACTURER_SPECIFIC_REPORT
+[debug] --- DEVICE_SPECIFIC_GET
+[debug] --- DEVICE_SPECIFIC_REPORT
+[debug] - CommandClass: COMMAND_CLASS_DEVICE_RESET_LOCALLY
+[debug] -- Version: 1
+[debug] -- Commands:
+[debug] --- DEVICE_RESET_LOCALLY_NOTIFICATION
+[debug] - CommandClass: COMMAND_CLASS_CONFIGURATION
+[debug] -- Version: 2
+[debug] -- Commands:
+[debug] --- CONFIGURATION_BULK_GET
+[debug] --- CONFIGURATION_BULK_REPORT
+[debug] --- CONFIGURATION_BULK_SET
+[debug] --- CONFIGURATION_GET
+[debug] --- CONFIGURATION_REPORT
+[debug] --- CONFIGURATION_SET
+[debug] - CommandClass: COMMAND_CLASS_BASIC
+[debug] -- Version: 1
+[debug] -- Commands:
+[debug] --- BASIC_GET
+[debug] --- BASIC_REPORT
+[debug] --- BASIC_SET
+[debug] ------------------------------------------
+[debug] 
+[debug]  COMMAND_CLASS_THERMOSTAT_MODE->THERMOSTAT_MODE_GET args: {} cb: true
+[debug]  COMMAND_CLASS_SENSOR_MULTILEVEL->SENSOR_MULTILEVEL_GET args: {} cb: true
+[debug]  COMMAND_CLASS_THERMOSTAT_SETPOINT->THERMOSTAT_SETPOINT_GET args: { Level: { 'Setpoint Type': 'Heating 1' } } cb: true
+[debug]  COMMAND_CLASS_SENSOR_MULTILEVEL SENSOR_MULTILEVEL_GET args: {} err: [ { [Error: invalid_type_expected_string ["Sensor Type"]] message: 'invalid_type_expected_string ["Sensor Type"]' },
+  { [Error: invalid_type_expecting_object ["Properties1"]] message: 'invalid_type_expecting_object ["Properties1"]' } ] result: null
+[debug]  COMMAND_CLASS_THERMOSTAT_MODE THERMOSTAT_MODE_GET args: {} err: null result: { 'Level (Raw)': <Buffer 0b>,
+  Level: 
+   { 'No of Manufacturer Data fields': 0,
+     Mode: 'Energy Save Heat' } }
+[debug]  COMMAND_CLASS_THERMOSTAT_SETPOINT THERMOSTAT_SETPOINT_GET args: { Level: { 'Setpoint Type': 'Heating 1' } } err: null result: { 'Level (Raw)': <Buffer 01>,
+  Level: { 'Setpoint Type': 'Heating 1' },
+  'Level2 (Raw)': <Buffer 22>,
+  Level2: { Size: 2, Scale: 0, Precision: 1 },
+  Value: <Buffer 00 96> }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c5>,
+     'Sensor Value (Parsed)': 19.7 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c5>,
+     'Sensor Value (Parsed)': 19.7 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c6>,
+     'Sensor Value (Parsed)': 19.8 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c6>,
+     'Sensor Value (Parsed)': 19.8 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c6>,
+     'Sensor Value (Parsed)': 19.8 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c6>,
+     'Sensor Value (Parsed)': 19.8 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c6>,
+     'Sensor Value (Parsed)': 19.8 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c5>,
+     'Sensor Value (Parsed)': 19.7 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_SENSOR_MULTILEVEL'].on('report') arguments: { '0': { value: 5, name: 'SENSOR_MULTILEVEL_REPORT' },
+  '1': 
+   { 'Sensor Type (Raw)': <Buffer 01>,
+     'Sensor Type': 'Temperature (version 1)',
+     'Level (Raw)': <Buffer 22>,
+     Level: { Size: 2, Scale: 0, Precision: 1 },
+     'Sensor Value': <Buffer 00 c5>,
+     'Sensor Value (Parsed)': 19.7 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_BASIC'].on('report') arguments: { '0': { value: 3, name: 'BASIC_REPORT' },
+  '1': { 'Value (Raw)': <Buffer 00>, Value: 0 },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_SETPOINT'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_SETPOINT_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: { 'Setpoint Type': 'Energy Save Heating' },
+     'Level2 (Raw)': <Buffer 22>,
+     Level2: { Size: 2, Scale: 0, Precision: 1 },
+     Value: <Buffer 00 96> },
+  '2': null }
+[debug] node.CommandClass['COMMAND_CLASS_THERMOSTAT_MODE'].on('report') arguments: { '0': { value: 3, name: 'THERMOSTAT_MODE_REPORT' },
+  '1': 
+   { 'Level (Raw)': <Buffer 0b>,
+     Level: 
+      { 'No of Manufacturer Data fields': 0,
+        Mode: 'Energy Save Heat' } },
+  '2': null }
